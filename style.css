@@ -1,0 +1,154 @@
+.question{
+            width:500px;
+            background-color: darkblue;
+            border-radius: 6px;
+            position: absolute;
+            top: 0 ;
+            left: 50%;
+            transform: translate(-50%,-50%),scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+        }
+        
+        .dd{
+            width:400px;
+            background-color: darkblue;
+            border-radius: 6px;
+            position: absolute;
+            top: 0 ;
+            left: 50%;
+            transform: translate(-50%,-50%),scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+            
+        }
+        
+        .fj{
+            width:400px;
+            background-color: darkblue;
+            border-radius: 6px;
+            position: absolute;
+            top: 0 ;
+            left: 50%;
+            transform: translate(-50%,-50%),scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+        }
+        .open-fj{
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%,-50%) scale(1);
+        }
+        
+        .dd h3 {
+            color:white;
+        }
+        .open-dd{
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%,-0%) scale(1);
+        }
+        
+        .question label{
+            color: white;
+            font-size: 38px;
+            font-weight: 500;
+            margin:40px 0 10px;
+        }
+        .question h4 {
+        color:white;
+        
+        }
+
+.reveal{
+            width:400px;
+            background-color: darkblue;
+            border-radius: 6px;
+            position: absolute;
+            top: 0 ;
+            left: 50%;
+            transform: translate(-50%,-50%),scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+}
+
+.open-reveal{
+    visibility: visible;
+            top: 50%;
+            transform: translate(-50%,-50%) scale(1);
+}
+        
+.game{
+    visibility: hidden;
+   transform: translate(0%,800px) scale(1);
+}
+
+#container{
+     transform: translate(0%,-50%) scale(1);
+    
+    
+}
+.reveal h3 {
+    color: white;
+}
+
+.open-game{
+    visibility: visible;
+    transform: translate(0%,800px) scale(1);
+}
+        
+        .question button{
+            width: 100%;
+            margin-top: 50px;
+            padding: 10px 0;
+            background: #6fd649;
+            color: #fff;
+            border: 0;
+            outline: none;
+            font-size: 18;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+        }
+        .open-question{
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%,-50%) scale(1);
+        }
+.fj h3 {
+    color: white;
+}
+
+
+.fque{
+     width:400px;
+            background-color: darkblue;
+            border-radius: 6px;
+            position: absolute;
+            top: 0 ;
+            left: 50%;
+            transform: translate(-50%,-50%),scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+}
+
+.fque-open{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}

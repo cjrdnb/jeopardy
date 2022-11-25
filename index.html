@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jeopardy Clone</title>
+        <meta name = "Author" content = "Carl Bruce">
+        <meta name = "Keywords" content = "JavaScript, input, if statement">
+        <meta charset = "UTF-8"/>
+        <meta name = "viewport" content = "width=device-width, initial scale = 1"/>
+         <script src = "script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <style>
+                
+        .required:after {
+            content:" *";
+            color: red;
+            }
+        </style>
+    
+    </head>
+    <body onload = "dailydouble()">
+       <div id="container">
+		<form>
+		<fieldset>
+		  <legend align = "center" ><h1>Player Info</h1></legend>
+        <table>
+            <!---Question 1-->
+                <tr>
+                <td id = "td1"><label class = "required">First Name:</label></td><td><input name = "fname" type = "text" size = "30" maxlength = "15"  id ="fname" /></td>
+            </tr>
+                  <tr>
+                      <td id = "td1"><label class = "required">Last Name:</label></td><td><input name = "lname" type = "text" size = "30" maxlength = "15"  id ="lname"/></td> 
+            </tr>
+                    <tr>
+                      <td id = "td1"><label class = "required">Date of Birth:</label></td><td><input name = "dob" type = "date" size = "30" maxlength = "20" id= "dob" onchange = "dis()"/></td> 
+            </tr>
+                  <tr>
+                      <td id = "td1"><label>Email:</label></td><td><input name = "email" type = "email" size = "50" maxlength = "100" id= "email" onfocus = "email()"/></td> 
+            </tr>
+                  <tr>
+                      <td id = "td1"><label>Age:</label></td><td><input name = "age" type = "text" size = "30" maxlength = "15" onchange = "agedis()" id ="age"/></td> 
+            </tr>
+                  <tr>
+                      <td id = "td1"><label>Gender:</label></td><td><input name = "gender" type = "text" size = "30" maxlength = "15"  id ="gender"/></td> 
+            </tr>
+             <tr>
+                <td id = "td1"><label>Address:</label></td>
+            </tr>
+            <br>
+                <tr>
+                <td id = "td1"><label>Street:</label></td><td><input name = "Address" type = "text" size = "50" maxlength = "100" id= "street"/></td> 
+            </tr>
+                <tr>
+                <td id = "td1"><label>City:</label></td><td><input name = "Address" type = "text" size = "50" maxlength = "100" id= "city"/></td> 
+            </tr>
+                <tr>
+                <td id = "td1"><label>Town:</label></td><td><input name = "Address" type = "text" size = "50" maxlength = "100" id= "town"/></td> 
+            </tr>
+                <tr>
+                <td id = "td1"><label>Country:</label></td><td><input name = "Address" type = "text" size = "50" maxlength = "100" id= "country"/></td> 
+            </tr>
+                    <tr>
+                      <td id = "td1"><label class = "required">Educational Level:</label></td><td><input name = "edlevel" type = "text" size = "30" maxlength = "15"  id ="edlevel"/></td> 
+            </tr>
+                    <tr>
+                      <td id = "td1"><label>Image of Self:</label></td><td><input name = "ioself" type = "text" size = "30" maxlength = "15"  id ="ioself"/></td> 
+            </tr>
+            </table>
+        <button type="button" onclick="Register();end()" id = "register">Register</button>
+<button type="button"  onclick = "PlayGame()" align = "right" id = "play" disabled>Play</button> 
+            <button type='button' onclick = 'findPercentageScore()' id = "results" disabled>Results</button>         
+            <br/>
+            <br>
+
+
+             <label id= "per">Show Percentage:</label>
+            <br>
+            <textarea name = "showpercentage" size = "30" maxlength = "20" id = "showpercentage" disabled rows = "8" cols ="60"> </textarea> 
+            <br/>
+             <label id= "per">Show All Players:</label>
+            <br>
+            <textarea name = "showallplayers" size = "30" maxlength = "20" id = "showallplayers" disabled rows = "8" cols ="60"> </textarea>
+            
+             
+           
+            </fieldset>
+        </form>
+        </div> 
+        
+        <p id = "pass"></p>
+    
+    <div class = "question" id ="quest">
+        <label id = "que"></label><br/>
+        <input id = "answer"  name = "answer" type = "text" size = "50" maxlength = "100">
+        <h4 id = "time"></h4>
+        <h4 id = "timeu"></h4>
+        <button type = "button" onclick="checkAnswer()" id="sub">Answer</button>
+    </div>
+    
+    <div class = "dd" id = "dailydd">
+        <h3 id = "daid">You have selected a daily double! Enter a dollar amount from $0 to the amount of money you currently have.</h3>
+        <input name = "dailydo" type = "number" size = "50" maxlength = "100" id= "dailyd" onchange = "getd()"/><br/>
+        <button type="button" onclick = "remdd()">Submit</button>
+    </div>
+    
+    <div class = "fj" id = "final">
+        <h3>You have completed level 1! You now have the option to play Final Jeopardy. </h3><br/>
+        <p id = "fcat"></p><br/>
+        <input id = "finaljamount" name ="final" size = "50" maxlength = "100"/>
+       <button type="button" id = "open" onclick ="finaljque()">Yes</button>
+        <button type="button" id = "close">No</button>
+       
+    </div>
+         <div id = "revans" class= "reveal">
+            <h3>Would you like to see the answer?</h3>
+            <button type='button' id = "yes" >Yes</button>
+            <button type='button' id ="no">No</button>
+            <h3 id = "anss"></h3>
+            </div>
+        
+         <div class = "fque" id = "fquestion">
+            <h3> Enter a dollar amount based on the category randomly chosen from $0 to the amount of money you currently have.</h3>
+             <h4 id = "time"></h4>
+            <input name = "" type = "number" size = "50" maxlength = "100" id= "famount"/>
+            <h3>QUESTION</h3> 
+              <br/>
+             <input name = "" type = "text" size = "50" maxlength = "100" id= "fanswer"/>
+             <button type="button" id = "fsub">Submit</button>
+        </div>
+        
+    <button onclick = "getptot()">dssd</button>
+    
+     <p id = "arr"></p>
+     <p id = "error"></p>
+     <p id = "arr1"></p>
+     <p id = "arr2"></p>
+     <p id = "arr3"></p>
+     <p id = "arr4"></p>
+     <p id = "arr5"></p>
+     <p id = "arr6"></p>
+     <p id = "arr7"></p>
+     <p id = "arr8"></p>
+     <p id = "arr9"></p>
+     <p id = "arr10"></p>
+     <p id = "arr11"></p>
+     <p id = "arr12"></p>
+    </body>
+</html>
