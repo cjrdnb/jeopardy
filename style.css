@@ -1,5 +1,9 @@
+legend{
+    text-align: center;
+}
+       
 
-        .question{
+.question{
             width:500px;
             background-color: darkblue;
             border-radius: 6px;
