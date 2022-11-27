@@ -444,7 +444,7 @@ function finaljque(){
             clearInterval(gameTime);
              //checkAnswer();
           } else {
-            document.getElementById("time").innerHTML = timeleft + " seconds remaining";
+            document.getElementById("time1").innerHTML = timeleft + " seconds remaining";
               
           }
           timeleft -=1; 
