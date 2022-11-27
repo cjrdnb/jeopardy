@@ -1,4 +1,5 @@
-.question{
+
+        .question{
             width:500px;
             background-color: darkblue;
             border-radius: 6px;
@@ -46,7 +47,7 @@
         .open-fj{
             visibility: visible;
             top: 50%;
-            transform: translate(-50%,-50%) scale(1);
+            transform: translate(-50%,525px) scale(1);
         }
         
         .dd h3 {
@@ -55,7 +56,7 @@
         .open-dd{
             visibility: visible;
             top: 50%;
-            transform: translate(-50%,-0%) scale(1);
+            transform: translate(-50%,525px) scale(1);
         }
         
         .question label{
@@ -97,8 +98,7 @@
 
 #container{
      transform: translate(0%,-50%) scale(1);
-    
-    
+    background: url("Flow-1-scaled.jpg.webp");
 }
 .reveal h3 {
     color: white;
@@ -125,7 +125,8 @@
         .open-question{
             visibility: visible;
             top: 50%;
-            transform: translate(-50%,-50%) scale(1);
+            transform: translate(-50%,525px) scale(1);
+            max-width: 100%;
         }
 .fj h3 {
     color: white;
@@ -146,9 +147,121 @@
             visibility: hidden;
             transition: transform 0.4s, top 0.4s;
 }
-
+.fque h3{
+    color: white;
+}
 .fque-open{
     visibility: visible;
     top: 50%;
-    transform: translate(-50%,-50%) scale(1);
+    transform: translate(-50%,525px) scale(1);
 }
+
+body {
+     background-color: #101827;
+    max-width: 100%;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+
+input{
+    background-color: lightgray;
+}
+
+#cat1,#cat2,#cat3,#cat4,#cat5{
+    background-color: aqua;
+    border: none;
+}
+
+#jep{
+    background: url('communityIcon_fcvv8rr93vs71.jpg');
+}
+
+#points{
+    color:white;
+}
+text-area{
+    background-color: lightgray;
+}
+
+fieldset{
+    border: 2px solid #F19E38;
+}
+table{
+    border: none;
+}
+
+
+#cat1a,#cat2a,#cat3a,#cat4a,#cat5a{
+    background-color: greenyellow;
+    color: white;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+#cat1b,#cat2b,#cat3b,#cat4b,#cat5b{
+    background-color: #F19E38;
+     color: white;
+     border: none;
+    width: 100%;
+    height: 100%;
+}
+
+#cat1c,#cat2c,#cat3c,#cat4c,#cat5c{
+    background-color: #431B7C;
+     color: white;
+     border: none;
+    width: 100%;
+    height: 100%;
+}
+
+#cat1d,#cat2d,#cat3d,#cat4d,#cat5d{
+    background-color: #E2DC7C;
+     color: white;
+     border: none;
+    width: 100%;
+    height: 100%;
+}
+
+
+#cat1e,#cat2e,#cat3e,#cat4e,#cat5e{
+    background-color:#43FF7C;
+     color: white;
+     border: none;
+    width: 100%;
+    height: 100%;
+}
+#fcat{
+    color: white;
+}
+
+#cat1[disabled],#cat1a[disabled],#cat1b[disabled],#cat1c[disabled],#cat1d[disabled],#cat1e[disabled]{
+    border: 2px solid red;
+}
+
+#cat2[disabled],#cat2a[disabled],#cat2b[disabled],#cat2c[disabled],#cat2d[disabled],#cat2e[disabled]{
+    border: 2px solid #E4DED2;
+}
+
+#cat3[disabled],#cat3a[disabled],#cat3b[disabled],#cat3c[disabled],#cat3d[disabled],#cat3e[disabled]{
+    border: 2px solid #00abcf;
+}
+#cat4[disabled],#cat4a[disabled],#cat4b[disabled],#cat4c[disabled],#cat4d[disabled],#cat4e[disabled]{
+    border: 2px solid #00ff44;
+}
+
+#cat5[disabled],#cat5a[disabled],#cat5b[disabled],#cat5c[disabled],#cat5d[disabled],#cat5e[disabled]{
+    border: 2px solid white;
+}
+
+
+@media only screen and (max-width:768px){
+    [id="container"]{
+        width: 100%;
+    }
+}
+
+/*td{
+    background-color: #101827;
+}*/
+
