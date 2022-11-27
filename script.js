@@ -1,7 +1,9 @@
 var PlayerData = new Array;
+var PlayerData1 = new Array;
 var age;
 var showallplayers = new Array;
 var  timeout;
+var fanswered;
 function ageCalculator() {  
     var userinput = document.getElementById('dob').value;  
     var dob = new Date(userinput);  
@@ -52,7 +54,6 @@ function Register(){
 
 
 function disable(){
-    document.getElementById("error").innerHTML = PlayerData[4];
      document.getElementById("fname").disabled = true;
      document.getElementById("lname").disabled = true;
      document.getElementById("dob").disabled = true;
@@ -122,12 +123,10 @@ var gamesp=0;
 function PlayGame(){
         gameo.classList.add("open-game");
         document.getElementById("play").disabled = true;
-        document.getElementById("end").disabled = false;
     
 }
 function Game(){
-
-document.write("<div class = 'game' id= 'gameo'><h1 id ='points'>Player Points:100</h1><br/><br/><center> <table border = '1' cellpadding = '10'  cellspacing = '5' width='40%'><tr> <td style = 'border:none'><button id='cat1' onclick = 'dosomething(this.id)'>Animals</button></td><td style = 'border:none'><button id='cat2' onClick = 'dosomething(this.id)'>Sports</button></td><td style = 'border:none'><button  id='cat3' onclick = 'dosomething(this.id)'>Music</button></td><td style = 'border:none'><button id='cat4' onclick = 'dosomething(this.id)'>History</button></td><td style = 'border:none' ><button id='cat5' onclick = 'dosomething(this.id)'> Science</button></td></tr><tr><td style = 'border:none'><button disabled id='cat1a'onclick= 'test(this.id)'>$100</button></td><td style = 'border:none' ><button disabled id='cat2a' onclick = 'test(this.id)'>$100</button></td><td style = 'border:none'><button disabled id='cat3a'  onclick = 'test(this.id)'>$100</button></td><td style = 'border:none'><button disabled id='cat4a'  onclick = 'test(this.id)'>$100</button></td><td style = 'border:none' ><button disabled id='cat5a'id='cat5a'  onclick = 'test(this.id)'>$100</button></td><td style = 'border:none' ></tr><td style = 'border:none' ><button disabled id='cat1b' onclick = 'test(this.id)'>$200</button></td><td style = 'border:none' ><button disabled id='cat2b'  onclick = 'test(this.id)'>$200</button></td><td style = 'border:none'><button disabled id='cat3b'  onclick = 'test(this.id)'>$200</button></td><td style = 'border:none' ><button disabled id='cat4b'  onclick = 'test(this.id)'>$200</button></td><td style = 'border:none' ><button disabled id='cat5b'  onclick = 'test(this.id)'>$200</button></td><tr><td style = 'border:none'><button disabled  id='cat1c'  onclick = 'test(this.id)'>$300</button></td><td style = 'border:none'><button disabled id='cat2c'  onclick = 'test(this.id)'>$300</button></td><td style = 'border:none'><button disabled id='cat3c'  onclick = 'test(this.id)'>$300</button></td><td style = 'border:none' ><button disabled id='cat4c'  onclick = 'test(this.id)'>$300</button></td><td style = 'border:none' ><button disabled id='cat5c'  onclick = 'test(this.id)'>$300</button></td></tr><tr><td style = 'border:none' ><button disabled id='cat1d'  onclick = 'test(this.id)''>$400</button></td><td style = 'border:none' ><button disabled id='cat2d'  onclick = 'test(this.id)'>$400</button></td><td style = 'border:none' ><button disabled id='cat3d'  onclick = 'test(this.id)'>$400</button></td><td style = 'border:none' i><button disabled id='cat4d'  onclick = 'test(this.id)'>$400</button></td><td style = 'border:none' ><button disabled id = 'cat5d'  onclick = 'test(this.id)'>$400</button></td></tr><tr><td style = 'border:none' ><button disabled id='cat1e'  onclick = 'test(this.id)'>$500</button></td><td style = 'border:none' ><button disabled id='cat2e'  onclick = 'test(this.id)'>$500</button></td><td style = 'border:none' ><button disabled id='cat3e'  onclick = 'test(this.id)'>$500</button></td><td style = 'border:none' ><button disabled id='cat4e'  onclick = 'test(this.id)'>$500</button></td><td style = 'border:none'><button disabled id='cat5e'  onclick = 'test(this.id)'>$500</button></td></tr></table><button type='button' onclick = 'findPercentageScore();finaljeopardy()'>End Game</button><button type='button' onclick = 'findPercentageScore()'>Quit</button><button type='button' onclick = 'PlayGame()'>Play Again</button></button></center></div>");
+document.write("<div class = 'game' id= 'gameo'><h1 id ='points'>Player Points:100</h1><br/><br/><center> <table border = '1' cellpadding = '10'  cellspacing = '5' width='40%' id ='jep'><tr> <td style = 'border:none'><button id='cat1' onclick = 'dosomething(this.id)'>Animals</button></td><td style = 'border:none'><button id='cat2' onClick = 'dosomething(this.id)'>Sports</button></td><td style = 'border:none'><button  id='cat3' onclick = 'dosomething(this.id)'>Music</button></td><td style = 'border:none'><button id='cat4' onclick = 'dosomething(this.id)'>History</button></td><td style = 'border:none' ><button id='cat5' onclick = 'dosomething(this.id)'> Science</button></td></tr><tr><td style = 'border:none'><button disabled id='cat1a'onclick= 'test(this.id)'>$100</button></td><td style = 'border:none' ><button disabled id='cat2a' onclick = 'test(this.id)'>$100</button></td><td style = 'border:none'><button disabled id='cat3a'  onclick = 'test(this.id)'>$100</button></td><td style = 'border:none'><button disabled id='cat4a'  onclick = 'test(this.id)'>$100</button></td><td style = 'border:none' ><button disabled id='cat5a'id='cat5a'  onclick = 'test(this.id)'>$100</button></td><td style = 'border:none' ></tr><td style = 'border:none' ><button disabled id='cat1b' onclick = 'test(this.id)'>$200</button></td><td style = 'border:none' ><button disabled id='cat2b'  onclick = 'test(this.id)'>$200</button></td><td style = 'border:none'><button disabled id='cat3b'  onclick = 'test(this.id)'>$200</button></td><td style = 'border:none' ><button disabled id='cat4b'  onclick = 'test(this.id)'>$200</button></td><td style = 'border:none' ><button disabled id='cat5b'  onclick = 'test(this.id)'>$200</button></td><tr><td style = 'border:none'><button disabled  id='cat1c'  onclick = 'test(this.id)'>$300</button></td><td style = 'border:none'><button disabled id='cat2c'  onclick = 'test(this.id)'>$300</button></td><td style = 'border:none'><button disabled id='cat3c'  onclick = 'test(this.id)'>$300</button></td><td style = 'border:none' ><button disabled id='cat4c'  onclick = 'test(this.id)'>$300</button></td><td style = 'border:none' ><button disabled id='cat5c'  onclick = 'test(this.id)'>$300</button></td></tr><tr><td style = 'border:none' ><button disabled id='cat1d'  onclick = 'test(this.id)''>$400</button></td><td style = 'border:none' ><button disabled id='cat2d'  onclick = 'test(this.id)'>$400</button></td><td style = 'border:none' ><button disabled id='cat3d'  onclick = 'test(this.id)'>$400</button></td><td style = 'border:none' i><button disabled id='cat4d'  onclick = 'test(this.id)'>$400</button></td><td style = 'border:none' ><button disabled id = 'cat5d'  onclick = 'test(this.id)'>$400</button></td></tr><tr><td style = 'border:none' ><button disabled id='cat1e'  onclick = 'test(this.id)'>$500</button></td><td style = 'border:none' ><button disabled id='cat2e'  onclick = 'test(this.id)'>$500</button></td><td style = 'border:none' ><button disabled id='cat3e'  onclick = 'test(this.id)'>$500</button></td><td style = 'border:none' ><button disabled id='cat4e'  onclick = 'test(this.id)'>$500</button></td><td style = 'border:none'><button disabled id='cat5e'  onclick = 'test(this.id)'>$500</button></td></tr></table><button type='button' onclick = 'findPercentageScore();finaljeopardy()'>End Game</button><button type='button' onclick = 'findPercentageScore()'>Quit</button><button type='button' onclick = 'PlayGame()'>Play Again</button></button></center></div>");
 }
     
 function dosomething(click){
@@ -135,6 +134,7 @@ function dosomething(click){
     
     
     //check if buttton is already disabled2
+        document.getElementById("showpercentage").value="";
          document.getElementById(click+"a").disabled = false;
          document.getElementById(click+"b").disabled = false;
          document.getElementById(click+"c").disabled = false;
@@ -186,7 +186,7 @@ function checkAnswer(){
              amt = parseInt(qu[parseInt(clicks[3])-1][n]);
             playertot = playertot - amt;
        revans.classList.add("open-reveal");
-       document.getElementById("arr2").innerHTML = "HEFIEFEF";
+      
        document.getElementById('yes').addEventListener("click", function() {
             document.getElementById("anss").innerHTML = answers[parseInt(clicks[3])-1][parseInt(clicked[4].charCodeAt(0)-97)];
             setTimeout(remrev,15000);
@@ -232,7 +232,7 @@ function checkAnswer(){
     PlayerData[parseInt(PlayerData.length)+1] = co; 
     PlayerData[parseInt(PlayerData.length)+1] = inco;
     
-    //document.getElementById("arr11").innerHTML =PlayerData;
+    
    
          document.getElementById("cat1").disabled = false;
          document.getElementById("cat2").disabled = false;
@@ -254,8 +254,9 @@ function checkAnswer(){
 }
 
 function finaljeopardy(){
-    if (PlayerData[parseInt(PlayerData.length)-1]==25){
-        var cats=['cat1','cat2','cat3','cat4','cat5'];
+   
+    if (parseInt(fanswered)==25){
+        var cats=['Animals','Sports','History','Music','Science'];
         finalcat = cats[Math.floor(Math.random()*cats.length)];
         final.classList.add("open-fj");
          document.getElementById("fcat").innerHTML = "The category selected is:"+finalcat;
@@ -269,7 +270,7 @@ function getd(){
         
         ddamt =validate(document.getElementById("dailyd").value);
         
-        //document.getElementById("arr7").innerHTML = ddamt;
+        
         if (correct == "true"){
             playertot = playertot + ddamt;
         }else if (correct == "false"){
@@ -333,7 +334,7 @@ function dailydouble(){
         randomca = cats[Math.floor(Math.random()*cats.length)];
         randomca1 = cats[Math.floor(Math.random()*cats.length)];
         randomca2 = cats[Math.floor(Math.random()*cats.length)];
-        window.alert('The computer chose'+randomca);
+       
     }
 function remdd(){
         dailydd.classList.remove("open-dd");
@@ -341,7 +342,7 @@ function remdd(){
 function validate(number){ 
         
         number = parseInt(number);
-        if (number < 0 || number > PlayerData[12]){
+        if (number < 0 || number > PlayerData[12] ||number > PlayerData1[12] ){
            number = Math.floor(Math.random() *PlayerData[12] +0);
             return number;
         }else {
@@ -356,25 +357,22 @@ function dis(){
     
 }
 function findPercentageScore() {
-    
-    //document.getElementById(a"arr11").innerHTML = PlayerData;
+    document.getElementById("showpercentage").value="";
   gameo.classList.remove("open-game");
     var percent;
     var date = new Date();
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
-
-    
-    
-    
     percent = parseInt(PlayerData[parseInt(PlayerData.length)-3])/PlayerData[13]*100;
-    //document.getElementById("arr11").innerHTML =  parseInt(PlayerData[parseInt(PlayerData.length)-3]);
+   
     document.getElementById("showpercentage").value = "The total number of questions answered is:"+" "+PlayerData[13]+"\nThe number of correct answers is:"+" "+PlayerData[parseInt(PlayerData.length)-3]+"\nThe number of incorrect answers is:"+" "+PlayerData[parseInt(PlayerData.length)-1]+"\nThe percentage score is:"+" "+percent +"\nPlayer's Name:"+" "+PlayerData[0]+PlayerData[1]+"\nPlayer's town is:"+" "+PlayerData[8]+"\nToday's Date is:"+" "+day+"/"+month+"/"+year;
     
     clearform();
 }
 function clearform(){
+    fanswered = PlayerData[parseInt(PlayerData.length)-1];
+    PlayerData1 = PlayerData;
     document.getElementById("fname").disabled = false;
      document.getElementById("lname").disabled = false;
      document.getElementById("dob").disabled = false;
@@ -401,6 +399,14 @@ function clearform(){
     document.getElementById('edlevel').value= "";
      document.getElementById('ioself').value = "";
     document.getElementById("register").disabled = false;
+    document.getElementById("results").disabled = true;
+    document.getElementById("showallplayers").value="";
+    playertot = 100;
+    gamesp=0;
+    PlayerData = [];
+    clicked1=[];
+    showallplayers=[];
+
 }
 function showall(){
     var percent;
@@ -412,15 +418,11 @@ function showall(){
     for (let i = 1; i <= parseInt(showallplayers.length);i++){
      percent = parseInt(showallplayers[i][parseInt(showallplayers[i].length)-3])/parseInt(showallplayers[i][13])*100;
      
-     document.getElementById("showallplayers").innerHTML+="Name:"+showallplayers[i][0] +" "+showallplayers[i][1]+",Age:"+" "+showallplayers[i][4]+",Number of Correct Answers:"+" "+showallplayers[i][parseInt(showallplayers[i].length)-3]+",Number of Incorrect Answers:"+" "+showallplayers[i][parseInt(showallplayers[i].length)-1]+" "+",Percentage:"+percent +"\n";
+     document.getElementById("showallplayers").value+="Name:"+showallplayers[i][0] +" "+showallplayers[i][1]+",Age:"+" "+showallplayers[i][4]+",Number of Correct Answers:"+" "+showallplayers[i][parseInt(showallplayers[i].length)-3]+",Number of Incorrect Answers:"+" "+showallplayers[i][parseInt(showallplayers[i].length)-1]+" "+",Percentage:"+percent +"\n";
     }
     
       
-    //document.getElementById("showallplayers").innerHTML ="Name:"+showallplayers[i][0]+showallplayers[i][1]+"Age"+
-     //document.getElementById("arr9").innerHTML = i+parseInt(localStorage.length);
-    
-   //document.getElementById("arr10").innerHTML = showallplayers[2][parseInt(showallplayers[2].length)-1];
-   //document.getElementById("arr10").innerHTML = showallplayers[2];
+   
 }
 function end(){
     
@@ -432,16 +434,13 @@ function end(){
 
 function finaljque(){
     var m = localStorage.length;
-    var finala,answer;
+    var finala,answers;
     final.classList.remove("open-fj");
     fquestion.classList.add("fque-open");
     
-   finala = validate(document.getElementById("famount").value);
    
-    answer = document.getElementById("fanswer").value;
-    
     var gameTime = setInterval(function(){
-          if(timeleft <= 0||clicke == true){
+          if(timeleft <= 0){
             clearInterval(gameTime);
              //checkAnswer();
           } else {
@@ -452,20 +451,26 @@ function finaljque(){
             tleft = timeleft;
         }, 1000); 
     
-    timeout = setTimeout(function(){if (tleft == 5){ PlayerData[12] = parseInt(PlayerData[12]) -parseInt(finala);  document.getElementById("points").innerHTML = "Player Points:"+PlayerData[12];}},60000);
+    timeout = setTimeout(function(){if (tleft == 5){ PlayerData1[12] = parseInt(PlayerData1[12]) -parseInt(finala);  document.getElementById("points").innerHTML = "Player Points:"+PlayerData1[12];}},60000);
     
     document.getElementById("fsub").addEventListener("click",function(){
-          if (answer == "Shvar"){
-        PlayerData[12] = parseInt(PlayerData[12]) +parseInt(finala);
+        finala = validate(document.getElementById("famount").value);
+   
+    answers = document.getElementById("fanswer").value;
+    
+          if (answers == "ShAvar"){
+        PlayerData1[12] = parseInt(PlayerData1[12]) +parseInt(finala);
         
     }else{
-        PlayerData[12] = parseInt(PlayerData[12]) -parseInt(finala);
+        PlayerData1[12] = parseInt(PlayerData1[12]) -parseInt(finala);
        
     }
          fquestion.classList.remove("fque-open");
+    
+        window.alert("Player's Final Points:"+PlayerData1[12]);
         
-          document.getElementById("points").innerHTML = "Player Points:"+PlayerData[12];
     });
     
-    localStorage.setItem(parseInt(m),JSON.stringify(PlayerData));
+    
+    localStorage.setItem(parseInt(m),JSON.stringify(PlayerData1));
 }
