@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Jeopardy Clone</title>
         <meta name = "Author" content = "Carl Bruce">
@@ -66,7 +66,7 @@
             </tr>
             </table>
         <button type="button" onclick="Register();end()" id = "register">Register</button>
-            <button type="button"  onclick = "PlayGame()" align = "right" id = "play" disabled>Play</button> 
+            <button type="button"  onclick = "PlayGame()" id = "play" disabled>Play</button> 
             <button type='button' onclick = 'findPercentageScore()' id = "results" disabled>Results</button>         
             <br/>
             <br>
@@ -74,11 +74,11 @@
 
              <label id= "per">Show Percentage:</label>
             <br>
-            <textarea name = "showpercentage" size = "30" maxlength = "20" id = "showpercentage" disabled rows = "8" cols ="60"> </textarea> 
+            <textarea name = "showpercentage" maxlength = "20" id = "showpercentage" disabled rows = "8" cols ="60"> </textarea> 
             <br/>
              <label id= "players">Show All Players:</label>
             <br>
-            <textarea name = "showallplayers" size = "30" maxlength = "20" id = "showallplayers" disabled rows = "8" cols ="60"> </textarea>
+            <textarea name = "showallplayers" maxlength = "20" id = "showallplayers" disabled rows = "8" cols ="60"> </textarea>
             
              
            
@@ -98,7 +98,7 @@
     
     <div class = "dd" id = "dailydd">
         <h3 id = "daid">You have selected a daily double! Enter a dollar amount from $0 to the amount of money you currently have.</h3>
-        <input name = "dailydo" type = "number" size = "50" maxlength = "100" id= "dailyd" onchange = "getd()"/><br/>
+        <input name = "dailydo" type = "number" id= "dailyd" onchange = "getd()"/><br/>
         <button type="button" onclick = "remdd()">Submit</button>
     </div>
     
@@ -113,13 +113,13 @@
             <h3>Would you like to see the answer?</h3>
             <button type='button' id = "yes" >Yes</button>
             <button type='button' id ="no">No</button>
-            <h3 id = "anss"></h3>
+            <h3 id = "anss"> </h3>
             </div>
         
          <div class = "fque" id = "fquestion">
             <h3> Enter a dollar amount based on the category randomly chosen from $0 to the amount of money you currently have.</h3>
-             <h4 id = "time"></h4>
-            <input name = "finalamount" type = "number" size = "50" maxlength = "100" id= "famount"/>
+             <h4 id = "time1"> </h4>
+            <input name = "finalamount" type = "number" id= "famount"/>
             <h3>QUESTION</h3> 
               <br/>
              <input name = "finalanswer" type = "text" size = "50" maxlength = "100" id= "fanswer"/>
