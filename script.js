@@ -4,6 +4,13 @@ var age;
 var showallplayers = new Array;
 var  timeout;
 var fanswered;
+
+ var fque = new Array;
+var fans = new Array;
+var fai;
+     fque= [["This bird is commonly dated to be last spotted in 1662."],["A member of the British Amateur Athletic Club wrote this 1867 set of 12 regulations whose name honors nobleman John Sholto Douglas"],["Before they were photographed together in 1862, Lincoln wryly noted this general 'should have no problem'' sitting still for it"],["Of their July 1957 first meeting at a church fair, one of this pair recalled: I' was a fat schoolboy and … he was drunk'"],["This part of the body is affected by Bright's Disease."]];
+    
+    fans = [["What is a dodo?"],["What are the 12 rules of Queensbury?"],["Who is George McClellan?"],["Who are John Lennon and Paul McCartney?"],["What is a kidney?"]];
 function ageCalculator() {  
     var userinput = document.getElementById('dob').value;  
     var dob = new Date(userinput);  
@@ -27,19 +34,18 @@ function ageCalculator() {
     }
     }  
     
-  
+    
     
 } 
-
 
 function checkEmail(){
     var email;
     email = document.getElementById("email").value;
-        if(email.includes("@SomeEmail.com")){
-            return;
-        }else{
-            window.alert("Email was not entered correctly. Please enter an email that ends with '@SomeEmail.com'");
+        if(!email.includes("@")){
+            window.alert("Email was not entered correctly, Please enter an email that is similar to '@SomeEmail.com'");
             enteredValue.focus();
+        }else{
+            return email;
         }
 
 }
@@ -267,12 +273,30 @@ function checkAnswer(){
 }
 
 function finaljeopardy(){
-   
-    if (parseInt(fanswered)==25){
+    
+    if (parseInt(fanswered)==1){
         var cats=['Animals','Sports','History','Music','Science'];
         finalcat = cats[Math.floor(Math.random()*cats.length)];
         final.classList.add("open-fj");
          document.getElementById("fcat").innerHTML = "The category selected is:"+finalcat;
+          if (finalcat=="Animals"){
+            document.getElementById("fq").innerHTML = fque[0];
+            fai=0;
+        }else if (finalcat=="Sports"){
+            document.getElementById("fq").innerHTML = fque[1];
+            fai=1;
+        }else if (finalcat=="History"){
+            document.getElementById("fq").innerHTML = fque[2];
+            fai=2;
+        } else if (finalcat=="Music"){
+            document.getElementById("fq").innerHTML = fque[3];
+            fai=3;
+        } else if(finalcat == "Science"){
+            document.getElementById("fq").innerHTML = fque[4];
+            fai=4;
+        }
+        
+        
     }
         document.getElementById("close").addEventListener("click",function(){
            final.classList.remove("open-fj"); 
@@ -403,7 +427,6 @@ function clearform(){
     document.getElementById('dob').value = "";
     document.getElementById('email').value = "";
     document.getElementById('age').value = "";
- 
     document.getElementById('gender').value = "";
      document.getElementById('street').value= "";
    document.getElementById('city').value= "";
@@ -414,6 +437,8 @@ function clearform(){
     document.getElementById("register").disabled = false;
     document.getElementById("results").disabled = true;
     document.getElementById("showallplayers").value="";
+    document.getElementById("famount").value = "";
+    document.getElementById("fanswer").value="";
     playertot = 100;
     gamesp=0;
     PlayerData = [];
@@ -447,38 +472,14 @@ function end(){
 
 function finaljque(){
     
-    var fque = new Array;
-    var fans = new Array;
-    var fai;
-     fque= [["Before they were photographed together in 1862, Lincoln wryly noted this general 'should have no problem'' sitting still for it"],["Of their July 1957 first meeting at a church fair, one of this pair recalled: I' was a fat schoolboy and … he was drunk'"],["This bird is commonly dated to be last spotted in 1662."],["This part of the body is affected by Bright's Disease."]];
-    
-    fans = [["What are the 12 rules of Queensbury?"],["Who is George McClellan?"],["Who are John Lennon and Paul McCartney?"],["What is a dodo?"],["What is a kidney?"]];
-    
-    if (finalcat=="Animals"){
-        document.getElementById("fq").innerHTML = fque[0];
-        fai=0;
-    }else if (finalcat=="Sports"){
-        document.getElementById("fq").innerHTML = fque[1];
-        fai=1;
-    }else if (finalcat=="History"){
-        document.getElementById("fq").innerHTML = fque[2];
-        fai=2;
-    } else if (finalcat=="Music"){
-        document.getElementById("fq").innerHTML = fque[3];
-        fai=3;
-    } else if(finalcat == "Science"){
-        document.getElementById("fq").innerHTML = fque[4];
-        fai=4;
-    }
-        
-        
         
     var m = localStorage.length;
     var finala,answers;
+    var timeleft=60;
     final.classList.remove("open-fj");
     fquestion.classList.add("fque-open");
   
-    
+    document.getElementById("ae").innerHTML = fai;
     
   
     var gameTime = setInterval(function(){
@@ -500,7 +501,7 @@ function finaljque(){
    
     answers = document.getElementById("fanswer").value;
     
-          if (answers == fans[fai]){
+    if (answers == fans[fai]){
         PlayerData1[12] = parseInt(PlayerData1[12]) +parseInt(finala);
         
     }else{
@@ -512,7 +513,6 @@ function finaljque(){
         window.alert("Player's Final Points:"+PlayerData1[12]);
         
     });
-    
     
     localStorage.setItem(parseInt(m),JSON.stringify(PlayerData1));
 }
@@ -531,8 +531,9 @@ function showfreq(){
     var perlt=0;
     var pertwtth=0;
     var perfts = 0;
-    var pergs = 0; 
+    var pergs = 0;
     
+    var freq = setInterval(function(){ 
     for (let i =1; i <=parseInt(localStorage.length);i++) {
      showallplayers[i]=JSON.parse(localStorage.getItem(i));
  }
@@ -566,6 +567,6 @@ function showfreq(){
     perfts = (fts/totp)*100;
     pergs = (gs/totp)*100;
    
-    document.getElementById("showcharts").innerHTML = "<img src =\"grey.png\" width="+permale+"\px\>"+"<img src =\"grey.png\" width="+perfem+"\px\>"+"<br/><img src =\"grey.png\" width="+perlt+"\px\>"+ "<img src =\"grey.png\" width="+pertwtth+"\px\>"+"<img src =\"grey.png\" width="+perfts+"\px\>"+ "<img src =\"grey.png\" width="+pergs+"\px\>";
+    document.getElementById("showcharts").innerHTML = "Male<img src =\"grey.png\" width="+permale+"\px\>"+"Female<img src =\"grey.png\" width="+perfem+"\px\>"+"<br/>-20<img src =\"grey.png\" width="+perlt+"\px\>"+ "20-x-39<img src =\"grey.png\" width="+pertwtth+"\px\>"+"40-x-69<img src =\"grey.png\" width="+perfts+"\px\>"+ "-69<img src =\"grey.png\" width="+pergs+"\px\>";},5000);
 }
 
