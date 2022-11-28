@@ -444,7 +444,7 @@ function clearform(){
     PlayerData = [];
     clicked1=[];
     showallplayers=[];
-
+  window.location.reload();
 }
 function showall(){
     var percent;
