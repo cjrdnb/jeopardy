@@ -41,7 +41,7 @@ function ageCalculator() {
 function checkEmail(){
     var email;
     email = document.getElementById("email").value;
-        if(!email.includes("@")){
+        if(!email.includes("@SomeEmail.com")){
             window.alert("Email was not entered correctly, Please enter an email that is similar to '@SomeEmail.com'");
             enteredValue.focus();
         }else{
