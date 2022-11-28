@@ -27,9 +27,22 @@ function ageCalculator() {
     }
     }  
     
-    
+  
     
 } 
+
+
+function checkEmail(){
+    var email;
+    email = document.getElementById("email").value;
+        if(email.includes("@SomeEmail.com")){
+            return;
+        }else{
+            window.alert("Email was not entered correctly. Please enter an email that ends with '@SomeEmail.com'");
+            enteredValue.focus();
+        }
+
+}
 
 function Register(){
     var  FName,LName, DOB, Email, Age, Gender,street, city, town, country, elevel, image;
@@ -37,7 +50,7 @@ function Register(){
     FName = document.getElementById('fname').value;
     LName = document.getElementById('lname').value;
     DOB = document.getElementById('dob').value;
-    Email = document.getElementById('email').value;
+    Email = checkEmail();
     Age = ageCalculator();
     Gender = document.getElementById('gender').value;
     street = document.getElementById('street').value;
