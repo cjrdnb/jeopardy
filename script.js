@@ -446,12 +446,41 @@ function end(){
 }
 
 function finaljque(){
+    
+    var fque = new Array;
+    var fans = new Array;
+    var fai;
+     fque= [["Before they were photographed together in 1862, Lincoln wryly noted this general 'should have no problem'' sitting still for it"],["Of their July 1957 first meeting at a church fair, one of this pair recalled: I' was a fat schoolboy and … he was drunk'"],["This bird is commonly dated to be last spotted in 1662."],["This part of the body is affected by Bright's Disease."]];
+    
+    fans = [["What are the 12 rules of Queensbury?"],["Who is George McClellan?"],["Who are John Lennon and Paul McCartney?"],["What is a dodo?"],["What is a kidney?"]];
+    
+    if (finalcat=="Animals"){
+        document.getElementById("fq").innerHTML = fque[0];
+        fai=0;
+    }else if (finalcat=="Sports"){
+        document.getElementById("fq").innerHTML = fque[1];
+        fai=1;
+    }else if (finalcat=="History"){
+        document.getElementById("fq").innerHTML = fque[2];
+        fai=2;
+    } else if (finalcat=="Music"){
+        document.getElementById("fq").innerHTML = fque[3];
+        fai=3;
+    } else if(finalcat == "Science"){
+        document.getElementById("fq").innerHTML = fque[4];
+        fai=4;
+    }
+        
+        
+        
     var m = localStorage.length;
     var finala,answers;
     final.classList.remove("open-fj");
     fquestion.classList.add("fque-open");
+  
     
-   
+    
+  
     var gameTime = setInterval(function(){
           if(timeleft <= 0){
             clearInterval(gameTime);
@@ -471,7 +500,7 @@ function finaljque(){
    
     answers = document.getElementById("fanswer").value;
     
-          if (answers == "ShAvar"){
+          if (answers == fans[fai]){
         PlayerData1[12] = parseInt(PlayerData1[12]) +parseInt(finala);
         
     }else{
