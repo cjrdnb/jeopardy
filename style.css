@@ -3,6 +3,10 @@
             color: red;
             }
 
+body{
+    font-family: sans-serif;
+}
+
 legend{
     text-align: center;
 }
