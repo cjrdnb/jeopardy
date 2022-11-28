@@ -33,15 +33,12 @@ function ageCalculator() {
     return age;
     }
     }  
-    
-    
-    
 } 
 
 function checkEmail(){
     var email;
     email = document.getElementById("email").value;
-        if(!email.includes("@SomeEmail.com")){
+        if(!email.includes("@")){
             window.alert("Email was not entered correctly, Please enter an email that is similar to '@SomeEmail.com'");
             enteredValue.focus();
         }else{
@@ -227,6 +224,8 @@ function checkAnswer(){
             playertot = playertot +amt;
             correct = "true";
         }
+        
+        window.alert("Answer is Correct");
         clicked1.push(clicked);
        
     } else{
@@ -238,6 +237,7 @@ function checkAnswer(){
             amt = parseInt(qu[parseInt(clicks[3])-1][n]);
             playertot = playertot - amt;
             correct = "false";
+             window.alert("Answer is InCorrect");
         }
 }
     
@@ -567,6 +567,6 @@ function showfreq(){
     perfts = (fts/totp)*100;
     pergs = (gs/totp)*100;
    
-    document.getElementById("showcharts").innerHTML = "Male<img src =\"grey.png\" width="+permale+"\px\>"+"Female<img src =\"grey.png\" width="+perfem+"\px\>"+"<br/>-20<img src =\"grey.png\" width="+perlt+"\px\>"+ "20-x-39<img src =\"grey.png\" width="+pertwtth+"\px\>"+"40-x-69<img src =\"grey.png\" width="+perfts+"\px\>"+ "-69<img src =\"grey.png\" width="+pergs+"\px\>";},5000);
+    document.getElementById("showcharts").innerHTML = "Male<img src =\"grey.png\" width="+permale+"\px\>"+"Female<img src =\"grey.png\" width="+perfem+"\px\>"+"<br/>-20&nbsp;<img src =\"grey.png\" width="+perlt+"\px\>"+ "20-x-39<img src =\"grey.png\" width="+pertwtth+"\px\>"+"40-x-69<img src =\"grey.png\" width="+perfts+"\px\>"+ "-69<img src =\"grey.png\" width="+pergs+"\px\>";},5000);
 }
 
