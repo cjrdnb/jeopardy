@@ -85,7 +85,7 @@ function play(){
     document.getElementById("play").disabled = true;
 }
 let questi = document.getElementById("quest");
-    let ddouble = document.getElementById("dd");
+let ddouble = document.getElementById("dd");
     Game();
     
     var tleft;
@@ -474,3 +474,56 @@ function finaljque(){
     
     localStorage.setItem(parseInt(m),JSON.stringify(PlayerData1));
 }
+
+
+function showfreq(){
+    var nummales =0;
+    var numfemales =0;
+    var permale;
+    var perfem;
+    var totp=0;
+    var lt=0;
+    var twtth=0;
+    var fts = 0;
+    var gs = 0;
+    var perlt=0;
+    var pertwtth=0;
+    var perfts = 0;
+    var pergs = 0; 
+    
+    for (let i =1; i <=parseInt(localStorage.length);i++) {
+     showallplayers[i]=JSON.parse(localStorage.getItem(i));
+ }
+    
+   for (let i = 1; i <parseInt(showallplayers.length);i++){
+        if (showallplayers[i][5]=="F"){
+            numfemales = parseInt(numfemales)+1;
+        }else if (showallplayers[i][5]=="M"){
+                nummales = parseInt(nummales)+1;
+    
+        }
+       
+       if (showallplayers[i][4]<20){
+           lt = lt + 1;
+       }else if (showallplayers[i][4]>=20 && showallplayers[i][4]<=39){
+          twtth = twtth +1;
+       }else if (showallplayers[i][4]>=40 && showallplayers[i][4]<=69){
+         fts = fts+1;
+       }else if (showallplayers[i][4]>69){
+        gs = gs+1;
+       }
+       totp = parseInt(totp)+1;
+    }
+    
+    
+    
+    permale = (nummales/totp)*100;
+    perfem = (numfemales/totp)*100;
+    perlt = (lt/totp)*100;
+    pertwtth = (twtth/totp)*100;
+    perfts = (fts/totp)*100;
+    pergs = (gs/totp)*100;
+   
+    document.getElementById("showcharts").innerHTML = "<img src =\"grey.png\" width="+permale+"\px\>"+"<img src =\"grey.png\" width="+perfem+"\px\>"+"<br/><img src =\"grey.png\" width="+perlt+"\px\>"+ "<img src =\"grey.png\" width="+pertwtth+"\px\>"+"<img src =\"grey.png\" width="+perfts+"\px\>"+ "<img src =\"grey.png\" width="+pergs+"\px\>";
+}
+
