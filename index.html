@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Jeopardy!</title>
-        <link rel="icon" type="image/x-icon" href="jeopardy.png">
+        <title>Jeopardy Clone</title>
         <meta name = "Author" content = "Carl Bruce, Shavar Morgan, Raynor Levy, Javier Batchelor, Jaiden Whyte">
         <meta name = "Keywords" content = "JavaScript, input, if statement">
         <meta charset = "UTF-8">
 		<meta name = "viewport" content = "width=device-width, initial-scale = 1">
          <script src = "script.js"></script>
         <link rel="stylesheet" href="style.css">
+        <style>
+                
+        .required:after {
+            content:" *";
+            color: red;
+            }
+        </style>
+        
+        <link rel="icon" type="image/x-icon" href="../Week1/Awesome%20Aesthetic%20Mac%20Wallpapers%20-%20WallpaperAccess.jpg">
+    
     </head>
     <body onload = "dailydouble();showfreq()">
        <div id="container">
@@ -16,64 +25,70 @@
 		<fieldset>
 		  <legend><h1>Player Info</h1></legend>
         <table>
+            <!---Question 1-->
                 <tr>
-                <td><label class = "required">First Name:</label></td><td><input name = "fname" type = "text" size = "30" maxlength = "15"  id ="fname"></td>
+                <td><label class = "required">First Name:</label></td><td><input name = "fname" type = "text" size = "30" maxlength = "15"  id ="fname" /></td>
             </tr>
                   <tr>
-                      <td><label class = "required">Last Name:</label></td><td><input name = "lname" type = "text" size = "30" maxlength = "15"  id ="lname"></td> 
+                      <td><label class = "required">Last Name:</label></td><td><input name = "lname" type = "text" size = "30" maxlength = "15"  id ="lname"/></td> 
             </tr>
                     <tr>
-                      <td><label class = "required">Date of Birth:</label></td><td><input name = "dob" type = "date" size = "30" id= "dob" onchange = "dis()"></td> 
+                      <td><label class = "required">Date of Birth:</label></td><td><input name = "dob" type = "date" size = "30" id= "dob" onchange = "dis()"/></td> 
             </tr>
                   <tr>
-                      <td><label>Email:</label></td><td><input name = "email" type = "email" size = "50" maxlength = "100" id= "email" onchange = "checkEmail()"></td>
+                      <td><label>Email:</label></td><td><input name = "email" type = "email" size = "50" maxlength = "100" id= "email" onchange= "checkEmail()"/></td>
                      
             </tr>
                   <tr>
-                      <td><label>Age:</label></td><td><input name = "age" type = "text" size = "10" maxlength = "10" onchange = "agedis()" id ="age" disabled></td> 
+                      <td><label>Age:</label></td><td><input name = "age" type = "text" size = "30" maxlength = "15" onchange = "agedis()" id ="age"/></td> 
             </tr>
                   <tr>
-                      <td><label>Gender:</label></td><td><input name = "gender" type="radio" value="m" id ="gender">Male
-                      <input name = "gender" type="radio" value="f" id ="gender">Female
-                      </td> 
+                      <td><label>Gender:</label></td><td><input type="radio" name="gender" value="M" id = "gender"> Male
+<input type="radio" name="gender" value="F" id = "gender"> Female
+</td> 
             </tr>
              <tr>
-                <td><label id = "address"><strong>Address</strong></label></td>
+                <td><label>Address:</label></td>
             </tr>
                 <tr>
-                <td><label>Street:</label></td><td><input name = "Address" type = "text" size = "50" maxlength = "100" id= "street"></td> 
+                <td><label>Street:</label></td><td><input name = "Address" type = "text" size = "50" maxlength = "100" id= "street"/></td> 
             </tr>
                 <tr>
-                <td><label>City:</label></td><td><input name = "Address" type = "text" size = "50" maxlength = "100" id= "city"></td> 
+                <td><label>City:</label></td><td><input name = "Address" type = "text" size = "30" maxlength = "100" id= "city"/></td> 
             </tr>
                 <tr>
-                <td><label>Town:</label></td><td><input name = "Address" type = "text" size = "50" maxlength = "100" id= "town"></td> 
+                <td><label>Town:</label></td><td><input name = "Address" type = "text" size = "50" maxlength = "100" id= "town"/></td> 
             </tr>
                 <tr>
-                <td><label>Country:</label></td><td><input name = "Address" type = "text" size = "50" maxlength = "100" id= "country"></td> 
+                <td><label>Country:</label></td><td><input name = "Address" type = "text" size = "50" maxlength = "100" id= "country"/></td> 
             </tr>
                     <tr>
-                      <td><label class = "required">Educational Level:</label></td><td><input name = "edlevel" type = "text" size = "30" maxlength = "15"  id ="edlevel"></td> 
+                      <td><label class = "required">Educational Level:</label></td><td><input name = "edlevel" type = "text" size = "30" maxlength = "15"  id ="edlevel"/></td> 
             </tr>
                     <tr>
-                      <td><label>Image of Self:</label></td><td><input name = "ioself" type = "file" size = "30" id ="ioself"></td> 
+                      <td><label>Image of Self:</label></td><td><input name = "ioself" type = "file" size = "30" id ="ioself"/></td> 
             </tr>
             </table>
         <button type="button" onclick="Register();end()" id = "register">Register</button>
             <button type="button"  onclick = "PlayGame()" id = "play" disabled>Play</button> 
             <button type='button' onclick = 'findPercentageScore()' id = "results" disabled>Results</button>                 
+            <br/>
             <br>
-            <br>
+
 
              <label id= "per">Show Percentage:</label>
             <br>
             <textarea name = "showpercentage" maxlength = "20" id = "showpercentage" disabled rows = "8" cols ="60"> </textarea> 
-            <br>
+            <br/>
              <label id= "players">Show All Players:</label>
             <br>
             <textarea name = "showallplayers" maxlength = "20" id = "showallplayers" disabled rows = "8" cols ="60"> </textarea>
              <div id = "showcharts">
+            
             </div>
+ 
+             
+           
             </fieldset>
         </form>
         </div> 
@@ -81,7 +96,7 @@
         <p id = "pass"></p>
     
     <div class = "question" id ="quest">
-        <label id = "que"></label><br>
+        <label id = "que"></label><br/>
         <input id = "answer"  name = "answer" type = "text" size = "50" maxlength = "100">
         <h4 id = "time">&nbsp;</h4>
         <h4 id = "timeu">&nbsp;</h4>
@@ -90,13 +105,13 @@
     
     <div class = "dd" id = "dailydd">
         <h3 id = "daid">You have selected a daily double! Enter a dollar amount from $0 to the amount of money you currently have.</h3>
-        <input name = "dailydo" type = "number" id= "dailyd" onchange = "getd()"><br>
+        <input name = "dailydo" type = "number" id= "dailyd" onchange = "getd()"/><br/>
         <button type="button" onclick = "remdd()">Submit</button>
     </div>
     
     <div class = "fj" id = "final">
-        <h3>You have completed level 1! You now have the option to play Final Jeopardy. </h3><br>
-        <p id = "fcat"></p><br>
+        <h3>You have completed level 1! You now have the option to play Final Jeopardy. </h3><br/>
+        <p id = "fcat"></p><br/>
        <button type="button" id = "open" onclick ="finaljque()">Yes</button>
         <button type="button" id = "close">No</button>
        
@@ -111,10 +126,10 @@
          <div class = "fque" id = "fquestion">
             <h3> Enter a dollar amount based on the category randomly chosen from $0 to the amount of money you currently have.</h3>
              <h4 id = "time1">&nbsp;</h4>
-            <input name = "finalamount" type = "number" id= "famount">
-            <h3 id= "hq">&nbsp;</h3> 
-              <br>
-             <input name = "finalanswer" type = "text" size = "50" maxlength = "100" id= "fanswer">
+            <input name = "finalamount" type = "number" id= "famount"/>
+            <h3 id ="fq"></h3> 
+              <br/>
+             <input name = "finalanswer" type = "text" size = "50" maxlength = "100" id= "fanswer"/>
              <button type="button" id = "fsub">Submit</button>
         </div>
     </body>
