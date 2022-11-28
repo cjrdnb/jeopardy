@@ -274,7 +274,7 @@ function checkAnswer(){
 
 function finaljeopardy(){
     
-    if (parseInt(fanswered)==1){
+    if (parseInt(fanswered)==25){
         var cats=['Animals','Sports','History','Music','Science'];
         finalcat = cats[Math.floor(Math.random()*cats.length)];
         final.classList.add("open-fj");
